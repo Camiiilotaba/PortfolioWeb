@@ -1,0 +1,84 @@
+html,body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    color:white;
+    
+}
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+header{
+    font-family: "Lilita One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+}
+.sticky-header {
+    
+    position: sticky;
+    top: 10;
+    background-color: #0c0635; 
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-section img {
+    margin-left: 20px;
+    width: 60px; 
+    border-radius: 50%;
+ 
+}
+
+.logo-section{
+    display: flex;
+    align-items: center;
+}
+.nombre {
+    margin-left:20px;
+    color: white; 
+    letter-spacing: 0.5px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin-right: 60px;
+}
+
+nav ul li {
+    margin-right: 40px;
+    margin-left: 30px;
+}
+
+nav ul li a {
+    font-family: "Lilita One", sans-serif;
+    font-style: normal;
+    font-size: 20px;
+    text-decoration: none;
+    color: white; 
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+main {
+    border-top: 0;
+    
+}
+.aboutme{
+  
+    background-image:  url(Imagenes/polygon-scatter-haikei.png);
+    width: 100vw;
+   
+    background-repeat: inherit;
+    
+}
+.aboutme h1{
+    margin: 0;
+    
+
+}

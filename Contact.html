@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+    <br>
+    
+    <!--Esto es una cabecera que te lleva a cada parte del Mapa web-->
+    <b>Julian Camilo Blandon Taba</b> &nbsp; <a href="https://www.linkedin.com/in/julian-camilo-blandon-taba-9b5210294/" target="_blank"><img src="Imagenes/Linkedin.png" alt=" imagen de un icono de linkedin" height="20px" width="20px"></a> <a href="https://github.com/Camiiilotaba" target="_blank"> <img src="Imagenes/Github.png" alt="imagen de un icono de Github" height="20px" width="20px"> </a> <a href="mailto:juliancamilo0204@gmail.com?" ><img src="Imagenes/gmail.png" alt=" imagen de un icono de Gmail" height="20px" width="20px"></a>    
+  <br><br>
+ <nav><a href="Pagina1.html">Home</a> | <a href="Projects.html"> Projects</a> | <a href="Aboutme.html"> About me </a>| <a href="Contact.html">Contact</a> </nav>    
+    <br>
+    <h1>Contact     </h1>
+    <!--A continuacion haremos un formulario que la accion al enviar será llevarte a contacto.php -->
+    <form action="contacto.php" method="POST" target="_blank">
+        <fieldset>
+            <!--En este primer apartado del formulario perdiremos sus datos personales, y todos los campos tiene que estar rellenados, además el campo telefono solo acepta 9 digitos y el correo debe tener un @ para ser valido-->
+            <legend>Personal information</legend>
+            <p> <label>Name: <input type="text" name="nombre" placeholder="Julian Camilo" required > </label></p>
+            <p> <label>Last Name: <input type="text" name="nombre" placeholder="Blandon Taba" required > </label></p>
+            <p> <label>Email: <input type="email" required name="email" value="" placeholder="Por ejemplo, camilo@dominio.com" size="30" tabindex="3"> </label> </p> 
+            <label for="numero"> Phone number:</label> <input type="tel" id="telefono" name="telefono" pattern="[0-9]{9}" placeholder="teléfono válido (9 dígitos)" required> <br/>
+            <br>
+            <p><textarea name="textarea" rows="10" cols="50" placeholder="Your message"></textarea></p>
+            
+        </fieldset>
+        <!--Estos dos input lo que hacen es que el primero envia el formulario y el segundo hace un reseteo del formulario--> 
+        <br>
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Limpiar">
+
+
+
+
+    </form>
+</body>
+</html>
