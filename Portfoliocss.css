@@ -1,47 +1,46 @@
-html,body{
+html, body {
     margin: 0;
     padding: 0;
     width: 100%;
-    color:white;
-    
+    color: white;
 }
+
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
     display: flex;
     flex-direction: column;
 }
-header{
+
+header {
     font-family: "Lilita One", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 20px;
-}
-.sticky-header {
-    
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
     position: sticky;
-    top: 10;
-    background-color: #0c0635; 
+    top: 0;
+    background-color: #56494C;
     padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 100;
 }
 
 .logo-section img {
     margin-left: 20px;
-    width: 60px; 
+    width: 60px;
     border-radius: 50%;
- 
 }
 
-.logo-section{
+.logo-section {
     display: flex;
     align-items: center;
 }
+
 .nombre {
-    margin-left:20px;
-    color: white; 
+    margin-left: 20px;
+    color: white;
     letter-spacing: 0.5px;
 }
 
@@ -61,24 +60,132 @@ nav ul li a {
     font-style: normal;
     font-size: 20px;
     text-decoration: none;
-    color: white; 
+    color: white;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
-main {
-    border-top: 0;
-    
-}
-.aboutme{
-  
-    background-image:  url(Imagenes/polygon-scatter-haikei.png);
-    width: 100vw;
-   
-    background-repeat: inherit;
-    
-}
-.aboutme h1{
-    margin: 0;
-    
 
+
+
+.HOME {
+    background-image: url(Imagenes/polygon-scatter-haikei.png);
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+   
+    
 }
+
+.HOME h1 {
+    
+    margin: 0px;
+    padding: 0;
+    color: white;
+    font-size: 50px;
+ 
+}
+
+.HOME-section {
+    color: white;
+    padding-left: 30px;
+    padding-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Divide en dos partes iguales */
+    gap: 20px; /* Espacio entre las columnas */
+    color: white;
+    padding: 50px;
+}
+
+.HOME-section h1 {
+    color: rgb(255, 255, 255);
+    font-size: 50px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.HOME-text {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+.HOME-text2 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.HOME p {
+    font-size: 20px;
+    flex: 1;
+}
+
+
+
+.aboutme-section {
+   
+    background-color: #000000;
+
+    padding: 20px;
+}
+
+
+
+media only screen and (max-width: 400px) {
+
+    .backgroundimg {
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .logo-img {
+        max-width: 120px;
+    }
+
+    .aboutus-text img {
+        width: 100%;
+    }
+
+    .slogan-section {
+        grid-column: 1;
+        font-size: 100px;
+    }
+
+    .card-container {
+        flex-direction: column;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .reviews-section h2 {
+        font-size: 30px;
+    }
+
+    .review img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .contact-section {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .form {
+        padding: 30px;
+    }
+
+    .form-text {
+        flex-direction: column;
+    }
+
+    .social-media img {
+        width: 30px;
+        padding: 5px;
+    }
+}
+
+
+
