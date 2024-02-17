@@ -24,12 +24,12 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 100;
+    
 }
 
 .logo-section img {
     margin-left: 20px;
-    width: 60px;
+    width: 50px;
     border-radius: 50%;
 }
 
@@ -77,47 +77,57 @@ nav ul li a {
 }
 
 .HOME h1 {
-    
-    margin: 0px;
+    padding: 0;
+    margin: 10px;
     padding: 0;
     color: white;
-    font-size: 50px;
- 
+    text-align: center; /* Alinea el texto al centro */
+   
 }
 
 .HOME-section {
     color: white;
-    padding-left: 30px;
+    padding-left: 50px;
     padding-top: 50px;
     display: grid;
     grid-template-columns: 1fr 1fr; /* Divide en dos partes iguales */
-    gap: 20px; /* Espacio entre las columnas */
+    gap: 200px; /* Espacio entre las columnas */
     color: white;
-    padding: 50px;
+    align-items: center; /* Centra verticalmente */
+    
 }
 
+
 .HOME-section h1 {
+    
     color: rgb(255, 255, 255);
     font-size: 50px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding: 50px;
+  
 }
 
 .HOME-text {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    flex-wrap: wrap;
+   
+    grid-column: 1;
+    text-align: center; /* Alinea el texto al centro */
+    padding: 0 50px; /* Ajusta el relleno horizontal */
+   
+}
+.homeprojects{
+    margin-left: 80px;
 }
 .HOME-text2 {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    flex-wrap: wrap;
+    
+    grid-column: 2;
+    margin: 100px;
 }
+
+
 
 .HOME p {
     font-size: 20px;
-    flex: 1;
+    
 }
 
 
@@ -128,63 +138,216 @@ nav ul li a {
 
     padding: 20px;
 }
+.btn-projects {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
 
+.btn-projects:hover {
+    background-color: #0056b3;
+}
 
+.card-client {
+    margin-left: 100px;
+    margin-top: 0;
+  background: #56494C;
+  width: 13rem;
+  padding-top: 15px;
+  padding-bottom: 25px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: 4px solid #ffffff;
+  box-shadow: 0 6px 10px rgba(207, 212, 222, 1);
+  border-radius: 10px;
+  text-align: center;
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  transition: all 0.3s ease;
+}
 
-media only screen and (max-width: 400px) {
+.card-client:hover {
+  transform: translateY(-10px);
+}
 
-    .backgroundimg {
-        height: auto;
-        min-height: 100vh;
+.user-picture {
+  overflow: hidden;
+  object-fit: cover;
+  width: 5rem;
+  height: 5rem;
+  border: 4px solid #ffffff;
+  border-radius: 999px;
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  margin: auto;
+}
+.user-picture img {
+    height: 90px;
+    width: 80px;
+    
+  }
+
+.user-picture svg {
+  width: 2.5rem;
+  fill: currentColor;
+}
+
+.name-client {
+  margin: 0;
+  margin-top: 20px;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.name-client span {
+  display: block;
+  font-weight: 200;
+  font-size: 16px;
+}
+
+.social-media:before {
+  content: " ";
+  display: block;
+  width: 100%;
+  height: 2px;
+  margin: 20px 0;
+  background: #ffffff;
+}
+
+.social-media a {
+  position: relative;
+  margin-right: 15px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.social-media a:last-child {
+  margin-right: 0;
+}
+
+.social-media a svg {
+  width: 1.1rem;
+  fill: currentColor;
+}
+
+/*-- Tooltip Social Media --*/
+.tooltip-social {
+  background: #262626;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0%;
+  padding: 0.5rem 0.4rem;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-40%, -90%);
+  transition: all 0.2s ease;
+  z-index: 1;
+}
+
+.tooltip-social:after {
+  content: " ";
+  position: absolute;
+  bottom: 1px;
+  left: 50%;
+  border: solid;
+  border-width: 10px 10px 0 10px;
+  border-color: transparent;
+  transform: translate(-50%, 100%);
+}
+
+.social-media a .tooltip-social:after {
+  border-top-color: #262626;
+}
+
+.social-media a:hover .tooltip-social {
+  opacity: 1;
+  transform: translate(-50%, -130%);
+}
+button.botoncurriculum {
+    padding: 1.3em 3em;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  button.botoncurriculum:hover {
+    background-color: #23c483;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+  }
+  
+  button.botoncurriculum:active {
+    transform: translateY(-1px);
+  }
+
+ 
+@media only screen and (max-width: 428px) {
+    /* Regla para evitar el desbordamiento horizontal */
+    html, body {
+        overflow-x: hidden;
+    }
+    header {
+        padding: 0px; /* Reducción del espacio entre elementos en el encabezado */
+        width: 100%; /* Ajuste para que el encabezado ocupe todo el ancho */
+        box-sizing: border-box; /* Incluye el padding y border en el ancho total */
     }
 
-    .logo-img {
-        max-width: 120px;
+    .HOME-section {
+        grid-template-columns: 1fr; /* Cambia a una sola columna */
+        gap: 20px; /* Reduce el espacio entre elementos */
+        padding: 20px; /* Añade espaciado alrededor del contenido */
     }
 
-    .aboutus-text img {
-        width: 100%;
+    .HOME-text,
+    .HOME-text2 {
+        padding: 0; /* Elimina el relleno horizontal */
     }
 
-    .slogan-section {
-        grid-column: 1;
-        font-size: 100px;
+    .HOME h1 {
+        font-size: 30px; /* Reducción del tamaño del título */
+        padding: 20px 0; /* Añade espacio alrededor del título */
     }
 
-    .card-container {
-        flex-direction: column;
+    .HOME-text2 button {
+        width: 100%; /* Los botones ocupan todo el ancho disponible */
+        margin-bottom: 10px; /* Agrega un margen inferior entre botones */
+    }
+    header {
+       
     }
 
-    .card {
-        width: 100%;
+    .nombre {
+        display: none; /* Oculta el nombre en dispositivos móviles para ahorrar espacio */
     }
 
-    .reviews-section h2 {
-        font-size: 30px;
+    nav ul {
+        margin-right: 0; /* Elimina el margen derecho en dispositivos móviles */
     }
 
-    .review img {
-        width: 40px;
-        height: 40px;
+    nav ul li {
+        margin-right: 0px; /* Reducido el margen para ajustarse mejor */
     }
-
-    .contact-section {
-        margin-top: 50px;
-        margin-bottom: 50px;
-    }
-
-    .form {
-        padding: 30px;
-    }
-
-    .form-text {
-        flex-direction: column;
-    }
-
-    .social-media img {
-        width: 30px;
-        padding: 5px;
-    }
+}
 }
 
 
