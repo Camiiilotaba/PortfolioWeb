@@ -372,51 +372,62 @@ div .about-me-info{
     text-align: left; /* Alineación del texto */
 }
 
-
-.projects-section {
-  background: rgb(140,134,145);
-  background: linear-gradient(180deg, rgba(140,134,145,1) 0%, rgba(159,164,169,1) 100%);
-  padding: 50px 0; /* Espaciado interior */
-  text-align: center; /* Alineación del texto */
-}
-
-.projects-section h2 {
-  padding-top: 15px ;
-  margin-bottom: 100px; /* Espacio entre el título y el contenido */
-  font-family: "Russo One", sans-serif;
-  font-size: 40px;
-  font-weight: 100;
-  padding-bottom: 25px;
-}
-
-.projects {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 120px;
-}
-
-.project-column {
-  flex: 1;
-}
-
-.project-card {
-  background-color: #fff;
-  border-radius: 8px;
-  padding: 20px;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.project-card h3 {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
-.project-card p {
-  font-size: 16px;
-  line-height: 1.6;
-}
-
+  /* Seccion projects */
+  .projects-section {
+    background: rgb(140,134,145);
+    background: linear-gradient(180deg, rgba(140,134,145,1) 0%, rgba(159,164,169,1) 100%);
+    padding: 50px 0; /* Espaciado interior */
+    text-align: center; /* Alineación del texto */
+    
+  }
+  
+  .projects-section h2 {
+    padding-top: 15px ;
+    margin-bottom: 100px; /* Espacio entre el título y el contenido */
+    font-family: "Russo One", sans-serif;
+    font-size: 40px;
+    font-weight: 100;
+    padding-bottom: 25px;
+    color: #fff; /* Color del título */
+  }
+  
+  .projects {
+    display: flex;
+    justify-content: center; /* Centra los elementos horizontalmente */
+    gap: 100px; /* Espacio entre las tarjetas */
+    flex-wrap: wrap; /* Envuelve las tarjetas cuando no caben en una fila */
+    margin-bottom: 120px;
+  }
+  
+  
+  .project-column {
+    flex: 1;
+    max-width: 350px; /* Ancho máximo de las columnas */
+    
+  }
+  
+  .project-card {
+    background-color: #56494C;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px; /* Ajusta el espacio entre las tarjetas */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .project-card img {
+    
+   height: 120px;
+    max-height: 120px; /* Altura máxima de la imagen */
+  }
+  
+  
+  
+  .project-card p {
+    font-size: 17px;
+    line-height: 1.6;
+    color: #fff; /* Color del texto */
+    text-align: center; /* Centra el texto dentro de la tarjeta */
+  }
 
  
 @media only screen and (max-width: 428px) {
@@ -467,7 +478,7 @@ div .about-me-info{
         margin-right: 0px; /* Reducido el margen para ajustarse mejor */
     }
 }
-}
+
 
 
 
