@@ -292,7 +292,7 @@ button.botoncurriculum {
   /*Aboutme Section*/
   .aboutme-section {
    background: rgb(140,134,145);
-background: linear-gradient(180deg, rgba(140,134,145,1) 0%, rgba(159,164,169,1) 100%);
+  background: linear-gradient(180deg, rgba(140,134,145,1) 0%, rgba(159,164,169,1) 100%);
    
     padding: 50px 0; /* Espaciado interior */
     text-align: center; /* Alineación del texto */
@@ -396,7 +396,7 @@ div .about-me-info{
     justify-content: center; /* Centra los elementos horizontalmente */
     gap: 100px; /* Espacio entre las tarjetas */
     flex-wrap: wrap; /* Envuelve las tarjetas cuando no caben en una fila */
-    margin-bottom: 120px;
+    margin-bottom: 180px;
   }
   
   
@@ -411,7 +411,7 @@ div .about-me-info{
     border-radius: 8px;
     padding: 20px;
     margin-bottom: 20px; /* Ajusta el espacio entre las tarjetas */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 4px 7px 11px rgba(207, 212, 222, 1);
   }
   
   .project-card img {
@@ -428,7 +428,91 @@ div .about-me-info{
     color: #fff; /* Color del texto */
     text-align: center; /* Centra el texto dentro de la tarjeta */
   }
+  .contact-section {
+    background: rgb(140, 134, 145);
+    background: linear-gradient(180deg, rgba(140, 134, 145, 1) 0%, rgba(159, 164, 169, 1) 100%);
+    padding: 50px 0; /* Espaciado interior */
+    text-align: center; /* Alineación del texto */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ajusta la altura de la sección para ocupar toda la pantalla */
+  }
+  
+  .form {
+    width: 300px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 30px 30px -30px rgba(27, 26, 26, 0.315);
+  }
+  
+  .form .title {
+    color: royalblue;
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: -1px;
+    line-height: 30px;
+    margin-bottom: 20px; /* Espaciado inferior para separar el título del resto del formulario */
+  }
+  
+  .form input,
+  .form textarea {
+    outline: 0;
+    border: 1px solid rgb(219, 213, 213);
+    padding: 8px 14px;
+    border-radius: 8px;
+    width: 250px;
+    margin-bottom: 15px; /* Espaciado inferior entre los campos de entrada */
+  }
+  
+  .form textarea {
+    height: 100px;
+    resize: none;
+  }
+  
+  .form button {
+    padding: 8px;
+    outline: 0;
+    border: 0;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    background-color: royalblue;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Añade una transición suave al color de fondo */
+  }
+  
+  .form button:hover {
+    background-color: #4169e1; /* Cambia el color de fondo al pasar el cursor sobre el botón */
+  }
+  .footer {
+    background-color: rgba(159, 164, 169, 1);
+    padding: 20px 0;
+    text-align: center;
+}
 
+.footer-content {
+    display: flex;
+    justify-content: center;
+}
+
+.footer-icon {
+    width: 40px;
+    height: 40px;
+    margin: 0 10px;
+    fill: #fff; /* Color del icono */
+    transition: fill 0.3s ease; /* Transición de color al pasar el cursor */
+}
+
+.footer-icon:hover {
+    fill: #4169e1; /* Cambia el color del icono al pasar el cursor */
+}
+
+.footer-link {
+    text-decoration: none;
+}
  
 @media only screen and (max-width: 428px) {
     /* Regla para evitar el desbordamiento horizontal */
