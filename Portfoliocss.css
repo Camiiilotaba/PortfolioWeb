@@ -95,7 +95,7 @@ nav ul li a {
   padding-top: 60px;
   display: grid;
   grid-template-columns: 1fr 1fr; /* Divide en dos partes iguales */
-  gap: 200px; /* Espacio entre las columnas */
+  gap: 150px; /* Espacio entre las columnas */
   color: white;
   padding-left: 60px;
 }
