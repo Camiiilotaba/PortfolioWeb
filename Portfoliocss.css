@@ -1,150 +1,144 @@
+/* Estilos generales para el HTML y el cuerpo del documento */
 html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    color: white;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  color: white;
 }
 
+/* Estilos específicos para el cuerpo del documento */
 body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    display: flex;
-    flex-direction: column;
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  flex-direction: column;
 }
 
+/* Estilos para la cabecera */
 header {
-    font-family: "Lilita One", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 20px;
-    position: sticky;
-    top: 0;
-    background-color: #56494C;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    
+  font-family: "Lilita One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+  position: sticky;
+  top: 0;
+  background-color: #56494C;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
+/* Estilos para la sección del logo */
 .logo-section img {
-    margin-left: 20px;
-    width: 50px;
-    border-radius: 50%;
+  margin-left: 20px;
+  width: 50px;
+  border-radius: 50%;
 }
 
+/* Estilos para la sección del logo (contenedor) */
 .logo-section {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
+/* Estilos para el nombre */
 .nombre {
-    margin-left: 20px;
-    color: white;
-    letter-spacing: 0.5px;
+  margin-left: 20px;
+  color: white;
+  letter-spacing: 0.5px;
 }
 
+/* Estilos para la lista de navegación */
 nav ul {
-    list-style: none;
-    display: flex;
-    margin-right: 60px;
+  list-style: none;
+  display: flex;
+  margin-right: 60px;
 }
 
+/* Estilos para cada elemento de la lista de navegación */
 nav ul li {
-    margin-right: 40px;
-    margin-left: 30px;
+  margin-right: 40px;
+  margin-left: 30px;
 }
 
+/* Estilos para los enlaces de la lista de navegación */
 nav ul li a {
-    font-family: "Lilita One", sans-serif;
-    font-style: normal;
-    font-size: 20px;
-    text-decoration: none;
-    color: white;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+  font-family: "Lilita One", sans-serif;
+  font-style: normal;
+  font-size: 20px;
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
-
-
+/* Estilos para la sección HOME */
 .HOME {
-    background-image: url(Imagenes/polygon-scatter-haikei.png);
-    height: 100vh;
-    background-repeat: no-repeat;
-    background-size: cover;
-   
-    
+  background-image: url(Imagenes/polygon-scatter-haikei.png);
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
+/* Estilos para el título de la sección HOME */
 .HOME h1 {
-    padding: 0;
-    margin: 10px;
-    padding: 0;
-    color: white;
-   
-   
+  padding: 0;
+  margin: 10px;
+  padding: 0;
+  color: white;
 }
 
+/* Estilos para la sección HOME */
 .HOME-section {
-    color: white;
-    
-    padding-top: 60px;
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Divide en dos partes iguales */
-    gap: 200px; /* Espacio entre las columnas */
-    color: white;
-    padding-left: 60px;
-
-    
+  color: white;
+  padding-top: 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Divide en dos partes iguales */
+  gap: 200px; /* Espacio entre las columnas */
+  color: white;
+  padding-left: 60px;
 }
 
-
+/* Estilos para el título de la sección HOME */
 .HOME-section h1 {
-    
-    color: rgb(255, 255, 255);
-    font-size: 50px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    padding-top: 50px;
-    padding-bottom: 40px;
-
+  color: rgb(255, 255, 255);
+  font-size: 50px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  padding-top: 50px;
+  padding-bottom: 40px;
 }
 
+/* Estilos para la sección HOME (texto) */
 .HOME-text {
-   
-    grid-column: 1;
-    
-    
-   
+  grid-column: 1;
 }
-.homeprojects{
-    margin-left: 80px;
+
+/* Estilos para la sección de proyectos en la página de inicio */
+.homeprojects {
+  margin-left: 80px;
 }
+
+/* Estilos para la sección HOME (texto 2) */
 .HOME-text2 {
- 
-    grid-column: 2;
-  
-   
+  grid-column: 2;
 }
 
-
-
+/* Estilos para el texto en la sección HOME */
 .HOME p {
-    font-size: 20px;
-    
+  font-size: 20px;
 }
 
-
-
+/* Estilos para la sección "Acerca de mí" */
 .aboutme-section {
-   
-    background-color: #000000;
-
-    padding: 20px;
+  background-color: #000000;
+  padding: 20px;
 }
 
+/* Estilos para las tarjetas de clientes */
 .card-client {
-    margin-left: 100px;
-    margin-top: 60px;
+  margin-left: 100px;
+  margin-top: 60px;
   background: #56494C;
   width: 13rem;
   padding-top: 30px;
@@ -158,16 +152,16 @@ nav ul li a {
   color: #ffffff;
   font-family: "Poppins", sans-serif;
   transition: all 0.3s ease;
-  
-}.card-client:hover {
+}
+
+/* Efecto hover para las tarjetas de clientes */
+.card-client:hover {
   transform: translateY(-10px);
 }
 
-
-
+/* Estilos para la imagen del usuario */
 .user-picture {
   overflow: hidden;
-  
   width: 5rem;
   height: 5rem;
   border: 4px solid #ffffff;
@@ -177,17 +171,20 @@ nav ul li a {
   align-items: end;
   margin: auto;
 }
-.user-picture img {
-    height: 90px;
-    width: 80px;
-    
-  }
 
+/* Estilos para la imagen dentro de la imagen del usuario */
+.user-picture img {
+  height: 90px;
+  width: 80px;
+}
+
+/* Estilos para el icono de las redes sociales */
 .user-picture svg {
   width: 2.5rem;
   fill: currentColor;
 }
 
+/* Estilos para el nombre del cliente */
 .name-client {
   margin: 0;
   margin-top: 20px;
@@ -195,12 +192,14 @@ nav ul li a {
   font-size: 18px;
 }
 
+/* Estilos para el texto secundario del nombre del cliente */
 .name-client span {
   display: block;
   font-weight: 200;
   font-size: 16px;
 }
 
+/* Estilos para la línea divisoria de las redes sociales */
 .social-media:before {
   content: " ";
   display: block;
@@ -210,6 +209,7 @@ nav ul li a {
   background: #ffffff;
 }
 
+/* Estilos para los enlaces de redes sociales */
 .social-media a {
   position: relative;
   margin-right: 15px;
@@ -217,15 +217,18 @@ nav ul li a {
   color: inherit;
 }
 
+/* Estilos para el último enlace de redes sociales */
 .social-media a:last-child {
   margin-right: 0;
 }
 
+/* Estilos para los iconos de redes sociales */
 .social-media a svg {
   width: 1.1rem;
   fill: currentColor;
 }
 
+/* Estilos para la información emergente de las redes sociales */
 .tooltip-social {
   background: #262626;
   display: block;
@@ -243,6 +246,7 @@ nav ul li a {
   z-index: 1;
 }
 
+/* Estilos para la punta de flecha de la información emergente de las redes sociales */
 .tooltip-social:after {
   content: " ";
   position: absolute;
@@ -254,40 +258,42 @@ nav ul li a {
   transform: translate(-50%, 100%);
 }
 
-.social-media a .tooltip-social:after {
-  border-top-color: #262626;
-}
-
+/* Estilos para la información emergente de las redes sociales en hover */
 .social-media a:hover .tooltip-social {
   opacity: 1;
   transform: translate(-50%, -130%);
 }
+
+/* Estilos para el botón de currículum */
 button.botoncurriculum {
-    padding: 1.3em 3em;
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 2.5px;
-    font-weight: 500;
-    color: #000;
-    background-color: #fff;
-    border: none;
-    border-radius: 45px;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease 0s;
-    cursor: pointer;
-    outline: none;
-  }
-  
-  button.botoncurriculum:hover {
-    background-color: #23c483;
-    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
-    color: #fff;
-    transform: translateY(-7px);
-  }
-  
-  button.botoncurriculum:active {
-    transform: translateY(-1px);
-  }
+  padding: 1.3em 3em;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+
+/* Efecto hover para el botón de currículum */
+button.botoncurriculum:hover {
+  background-color: #23c483;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+/* Efecto activo para el botón de currículum */
+button.botoncurriculum:active {
+  transform: translateY(-1px);
+}
+
 
   /*Aboutme Section*/
   .aboutme-section {
@@ -299,7 +305,7 @@ button.botoncurriculum {
 }
 
 .aboutme-section h2 {
-    padding-top: 15px ;
+    padding-top: 40px ;
     margin-bottom: 100px; /* Espacio entre el título y el contenido */
     font-family: "Russo One", sans-serif;
     font-size: 40px;
@@ -375,13 +381,16 @@ div .about-me-info{
   /* Seccion projects */
   .projects-section {
     background: rgb(140,134,145);
-    background: linear-gradient(180deg, rgba(140,134,145,1) 0%, rgba(159,164,169,1) 100%);
+    background: linear-gradient(180deg, rgba(159,164,169,1) 0%, rgba(140,134,145,1) 100%);
+
     padding: 50px 0; /* Espaciado interior */
     text-align: center; /* Alineación del texto */
     
+   
   }
   
   .projects-section h2 {
+    
     padding-top: 15px ;
     margin-bottom: 100px; /* Espacio entre el título y el contenido */
     font-family: "Russo One", sans-serif;
@@ -389,6 +398,7 @@ div .about-me-info{
     font-weight: 100;
     padding-bottom: 25px;
     color: #fff; /* Color del título */
+    border-top: 2px solid white;
   }
   
   .projects {
@@ -427,6 +437,7 @@ div .about-me-info{
     line-height: 1.6;
     color: #fff; /* Color del texto */
     text-align: center; /* Centra el texto dentro de la tarjeta */
+    
   }
   .contact-section {
     background: rgb(140, 134, 145);
@@ -437,6 +448,7 @@ div .about-me-info{
     justify-content: center;
     align-items: center;
     height: 100vh; /* Ajusta la altura de la sección para ocupar toda la pantalla */
+   
   }
   
   .form {
@@ -520,10 +532,23 @@ div .about-me-info{
         overflow-x: hidden;
     }
     header {
-        padding: 0px; /* Reducción del espacio entre elementos en el encabezado */
-        width: 100%; /* Ajuste para que el encabezado ocupe todo el ancho */
-        box-sizing: border-box; /* Incluye el padding y border en el ancho total */
-    }
+      font-family: "Lilita One", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 20px;
+      position: sticky;
+      top: 0;
+      background-color: #56494C;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: nowrap;
+      flex-direction: column;
+  }
+    header nav ul li:first-child {
+      display: none;
+  }
 
     .HOME-section {
         grid-template-columns: 1fr; /* Cambia a una sola columna */
@@ -546,9 +571,64 @@ div .about-me-info{
         margin-bottom: 10px; /* Agrega un margen inferior entre botones */
         
     }
-    header {
-       
-    }
+   
+
+  .logo-section img {
+      width: 40px; /* Reducir el tamaño del logo */
+  }
+
+ 
+
+  nav ul {
+      margin-right: 20px; /* Reducir el margen derecho */
+  }
+
+  nav ul li {
+      margin-right: 10px; /* Reducir el margen derecho de los elementos de la lista */
+      margin-left: 10px; /* Reducir el margen izquierdo de los elementos de la lista */
+  }
+
+  .HOME-section {
+      grid-template-columns: 1fr; /* Cambiar a una sola columna en dispositivos pequeños */
+      gap: 0px; /* Reducir el espacio entre las secciones */
+      padding-left: 20px; /* Reducir el padding izquierdo */
+      
+  }
+
+  .HOME-section h1 {
+      font-size: 30px; /* Reducir el tamaño de fuente del título */
+      padding-top: 20px; /* Reducir el padding superior */
+      padding-bottom: 20px; /* Reducir el padding inferior */
+  }
+  .HOME-text p{
+    font-size: 15px;
+  }
+  .homeprojects {
+      margin-left: 40px; /* Reducir el margen izquierdo */
+  }
+
+  .card-client {
+      margin-left: 20px; /* Reducir el margen izquierdo */
+      margin-top: 40px; /* Reducir el margen superior */
+  }
+
+  .user-picture {
+      width: 4rem; /* Reducir el tamaño de la imagen del usuario */
+      height: 4rem; /* Reducir el tamaño de la imagen del usuario */
+  }
+
+  .user-picture img {
+      height: 70px; /* Reducir el tamaño de la imagen del usuario */
+      width: 60px; /* Reducir el tamaño de la imagen del usuario */
+  }
+
+  .skills {
+      margin-left: 20px; /* Reducir el margen izquierdo */
+      margin-right: 20px; /* Reducir el margen derecho */
+      padding-left: 20px; /* Reducir el padding izquierdo */
+      padding-right: 20px; /* Reducir el padding derecho */
+      width: auto; /* Hacer que el ancho sea automático */
+  }
 
     .nombre {
         display: none; /* Oculta el nombre en dispositivos móviles para ahorrar espacio */
@@ -561,7 +641,31 @@ div .about-me-info{
     nav ul li {
         margin-right: 0px; /* Reducido el margen para ajustarse mejor */
     }
+    .about-me {
+      
+      margin-bottom: 120px;
+      font-size: 20px;
+      flex-direction: column;
+  }
 }
+@media only screen and (max-width: 834px) {
+  .container {
+      max-width: 768px; /* Reducir el ancho del contenedor para adaptarse a la pantalla del iPad Air */
+  }
+  .skills {
+      width: 140px; /* Reducir el ancho de las habilidades para adaptarse mejor */
+      font-size: 14px; /* Reducir el tamaño del texto */
+  }
+  .aboutme-section h2 {
+    padding-top: 180px;
+    margin-bottom: 100px;
+    font-family: "Russo One", sans-serif;
+    font-size: 40px;
+    font-weight: 100;
+    padding-bottom: 25px;
+  }
+}
+
 
 
 
