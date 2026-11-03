@@ -33,6 +33,6 @@ export const TRUEKAPP = {
 export const VALODEX = {
   url: 'https://valodex-app.vercel.app/',
   label: 'valodex-app.vercel.app',
-  stack: ['React', 'JavaScript', 'Vite', 'Tailwind CSS'],
+  stack: ['React', 'TypeScript', 'Vite', 'Tailwind CSS'],
   image: valodexGrid,
 } as const;

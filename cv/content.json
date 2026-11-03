@@ -74,7 +74,7 @@
         "label": "valodex-app.vercel.app",
         "status": "Proyecto personal con demo pública",
         "bullets": [
-          "SPA en React y JavaScript para consultar datos de Valorant. La clave de la API queda en una función serverless y cada pestaña limita sus peticiones por minuto."
+          "SPA en React y TypeScript para consultar datos de Valorant. La clave de la API queda en una función serverless y cada pestaña limita sus peticiones por minuto."
         ]
       }
     ],
@@ -171,7 +171,7 @@
         "label": "valodex-app.vercel.app",
         "status": "Personal project with a public demo",
         "bullets": [
-          "React and JavaScript SPA for browsing Valorant data. The API key stays in a serverless function and each tab limits its requests per minute."
+          "React and TypeScript SPA for browsing Valorant data. The API key stays in a serverless function and each tab limits its requests per minute."
         ]
       }
     ],
