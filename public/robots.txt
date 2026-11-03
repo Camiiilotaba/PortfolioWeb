@@ -1,0 +1,5 @@
+# All crawlers are allowed. Indexing is controlled per page with <meta name="robots">.
+User-agent: *
+Allow: /
+
+Sitemap: https://camilotaba.dev/sitemap-index.xml
