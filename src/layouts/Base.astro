@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import Analytics from '@vercel/analytics/astro';
 import sansFont from '../assets/fonts/instrument-sans-latin-wght.woff2?url';
 import { HOME_PATH, useDict, type Lang } from '../i18n';
 import { PERSON } from '../data/profile';
@@ -87,5 +88,6 @@ const personLd = {
       {t.skip}
     </a>
     <slot />
+    <Analytics />
   </body>
 </html>

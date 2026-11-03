@@ -1,5 +1,4 @@
 ---
-// If analytics is ever enabled, update «Visitas al sitio», «Quién más accede» and the CSP connect-src.
 import LegalPage from '../../components/site/LegalPage.astro';
 import { PERSON } from '../../data/profile';
 ---
@@ -8,7 +7,7 @@ import { PERSON } from '../../data/profile';
   title="Política de privacidad"
   description="Cómo se tratan los datos personales en camilotaba.dev."
   path="/es/privacidad/"
-  updated="2 de noviembre de 2026"
+  updated="3 de noviembre de 2026"
 >
   <h2>Responsable del tratamiento</h2>
   <ul>
@@ -25,8 +24,13 @@ import { PERSON } from '../../data/profile';
   </p>
   <p>
     <strong>Visitas al sitio.</strong> Al cargar la web, el servidor del proveedor de alojamiento recibe datos técnicos
-    como tu dirección IP y tu navegador, necesarios para mostrarte la página. No uso herramientas de analítica ni de
-    medición de visitas.
+    como tu dirección IP y tu navegador, necesarios para mostrarte la página. Además, uso Vercel Web Analytics para saber,
+    en conjunto, cuántas visitas recibe el sitio y qué páginas se ven. Por cada página vista puede registrar la fecha y
+    la hora, la dirección de la página (con sus parámetros, filtrados), la página desde la que llegas, tu ubicación
+    aproximada (país, región y ciudad), el sistema operativo, el navegador, el tipo de dispositivo y la versión del script
+    de analítica. No usa cookies: para contar visitantes únicos genera un identificador (un hash) a partir de la propia
+    petición, que se reinicia cada día, así que no permite seguirte de un día a otro ni entre sitios web distintos. Los
+    datos son anónimos, no se asocian a ninguna persona ni a tu dirección IP, y yo solo veo estadísticas agregadas.
   </p>
 
   <h2>Base legal</h2>
@@ -34,14 +38,17 @@ import { PERSON } from '../../data/profile';
     <li><strong>Peticiones de presupuesto o de servicios:</strong> la aplicación, a petición tuya, de medidas precontractuales (artículo 6.1.b del Reglamento General de Protección de Datos, RGPD).</li>
     <li><strong>Otros mensajes:</strong> el interés legítimo en responder a quien se pone en contacto conmigo (artículo 6.1.f del RGPD).</li>
     <li><strong>Funcionamiento de la web:</strong> el interés legítimo en ofrecer un sitio que funcione.</li>
+    <li><strong>Estadísticas de visitas:</strong> el interés legítimo en saber, con datos agregados y anónimos, cómo se usa el sitio (artículo 6.1.f del RGPD).</li>
   </ul>
 
   <h2>Quién más accede a los datos</h2>
   <p>
     No vendo ni cedo tus datos a nadie. El sitio se aloja en <strong>Vercel Inc.</strong> (Estados Unidos), que trata los
-    datos técnicos de las visitas por mi cuenta como encargado del tratamiento. Las transferencias internacionales que
-    ello implica están amparadas por las cláusulas contractuales tipo aprobadas por la Comisión Europea, incluidas en su
-    acuerdo de tratamiento de datos (<a href="https://vercel.com/legal/privacy-policy">política de privacidad de Vercel</a>).
+    datos técnicos de las visitas y los de la analítica por mi cuenta como encargado del tratamiento. Las transferencias
+    internacionales que ello implica están amparadas por las cláusulas contractuales tipo aprobadas por la Comisión
+    Europea, incluidas en su acuerdo de tratamiento de datos (<a href="https://vercel.com/legal/privacy-policy">política de
+    privacidad de Vercel</a>; detalles de la analítica en <a href="https://vercel.com/docs/analytics/privacy-policy">Vercel
+    Web Analytics: privacidad</a>).
   </p>
 
   <h2>Cuánto tiempo se conservan</h2>
@@ -62,5 +69,5 @@ import { PERSON } from '../../data/profile';
   <p>No tomo decisiones automatizadas ni elaboro perfiles con tus datos.</p>
 
   <h2>Cookies</h2>
-  <p>Este sitio no instala cookies propias ni de terceros. Si en el futuro se añadiera algún servicio que las use, se te pedirá permiso antes.</p>
+  <p>Este sitio no instala cookies propias ni de terceros, tampoco para la analítica de visitas. Si en el futuro se añadiera algún servicio que las use, se te pedirá permiso antes.</p>
 </LegalPage>

@@ -8,7 +8,7 @@ Source of my personal portfolio: a static, bilingual (EN/ES) site built with **A
 ## Stack
 
 Astro 7 (static output) · Tailwind CSS 4 · TypeScript · self-hosted variable fonts · set up for Vercel.
-No client framework: the only JavaScript is a small progressive-enhancement script for copying the email address.
+No client framework: the only JavaScript is a small progressive-enhancement script for copying the email address and cookieless Vercel Web Analytics.
 
 ## Highlights
 
