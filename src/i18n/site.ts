@@ -33,12 +33,6 @@ export interface SiteDict {
       decisionsLabel: string;
     };
   };
-  capabilities: {
-    heading: string;
-    intro: string;
-    evidenceLabel: string;
-    items: { title: string; body: string; evidence: string[] }[];
-  };
   experience: {
     heading: string;
     techLabel: string;
@@ -114,33 +108,6 @@ const es: SiteDict = {
       },
       decisionsLabel: 'Dos decisiones',
     },
-  },
-  capabilities: {
-    heading: 'Qué construyo',
-    intro: 'Capacidades respaldadas por mi experiencia y mis proyectos.',
-    evidenceLabel: 'Dónde',
-    items: [
-      {
-        title: 'Aplicaciones de gestión y SaaS',
-        body: 'Plataformas multi-tenant, permisos por roles e informes en PDF.',
-        evidence: ['FleetX', 'Apuestas de Murcia'],
-      },
-      {
-        title: 'Backend y APIs',
-        body: 'APIs REST y lógica de negocio en Laravel, con cálculos trazables como las emisiones por envío según GLEC v3.2.',
-        evidence: ['FleetX', 'Gesa', 'Truekapp'],
-      },
-      {
-        title: 'Apps móviles con Flutter',
-        body: 'Una app de partes diarios que funciona sin conexión y la base de una app con notificaciones push y sincronización en tiempo real.',
-        evidence: ['FleetX', 'Gesa'],
-      },
-      {
-        title: 'IA dentro del producto',
-        body: 'Un asistente que recomienda anuncios con búsqueda semántica y modelos de respaldo, y análisis nutricional de fotos y PDF.',
-        evidence: ['Truekapp', 'Gesa'],
-      },
-    ],
   },
   experience: {
     heading: 'Experiencia',
@@ -250,33 +217,6 @@ const en: SiteDict = {
       },
       decisionsLabel: 'Two decisions',
     },
-  },
-  capabilities: {
-    heading: 'What I build',
-    intro: 'Capabilities backed by my experience and projects.',
-    evidenceLabel: 'Where',
-    items: [
-      {
-        title: 'Management applications and SaaS',
-        body: 'Multi-tenant platforms, permissions by role and PDF reports.',
-        evidence: ['FleetX', 'Apuestas de Murcia'],
-      },
-      {
-        title: 'Backend and APIs',
-        body: 'REST APIs and business logic in Laravel, including traceable calculations such as emissions per shipment following GLEC v3.2.',
-        evidence: ['FleetX', 'Gesa', 'Truekapp'],
-      },
-      {
-        title: 'Flutter mobile apps',
-        body: 'A daily report app that works offline and the foundation of an app with push notifications and sync in real time.',
-        evidence: ['FleetX', 'Gesa'],
-      },
-      {
-        title: 'AI inside the product',
-        body: 'An assistant that recommends listings with semantic search and fallback models, and nutrition analysis of photos and PDFs.',
-        evidence: ['Truekapp', 'Gesa'],
-      },
-    ],
   },
   experience: {
     heading: 'Experience',
