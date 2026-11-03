@@ -45,6 +45,7 @@ node scripts/check-text-zoom.mjs           # text enlarged to 200 % without over
 ```
 
 `node scripts/generate-og.mjs` regenerates the Open Graph images and icons.
+`node scripts/build-cv.mjs` builds both CV PDFs from `cv/content.json`.
 
 ## Structure
 

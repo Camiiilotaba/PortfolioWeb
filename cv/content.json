@@ -1,0 +1,213 @@
+{
+  "name": "Camilo Taba",
+  "email": "camilotaba.dev@gmail.com",
+  "phone": "+34 665 324 567",
+  "links": [
+    {
+      "label": "camilotaba.dev",
+      "href": "https://camilotaba.dev"
+    },
+    {
+      "label": "linkedin.com/in/camilotaba",
+      "href": "https://www.linkedin.com/in/camilotaba/"
+    },
+    {
+      "label": "github.com/Camiiilotaba",
+      "href": "https://github.com/Camiiilotaba"
+    }
+  ],
+  "es": {
+    "role": "Desarrollador Full-Stack · Laravel y PHP",
+    "location": "Orihuela, Alicante, España",
+    "headings": {
+      "profile": "Perfil profesional",
+      "experience": "Experiencia profesional",
+      "projects": "Proyectos destacados",
+      "education": "Formación",
+      "skills": "Competencias técnicas"
+    },
+    "profile": "Desarrollador Full-Stack con Laravel y PHP. Construyo aplicaciones de gestión y SaaS, con backend y APIs en Laravel, interfaces en Vue y aplicaciones móviles en Flutter.",
+    "experience": [
+      {
+        "role": "Desarrollador Full-Stack",
+        "company": "FleetX",
+        "meta": "SaaS noruego de logística · Enero 2026 – actualidad",
+        "bullets": [
+          "Construí el parte diario de los conductores: app Flutter que funciona sin conexión, donde registran las horas, el trabajo hecho y los gastos del día como dietas u hotel; aprobación en Vue y backend Laravel conectado al tacógrafo y a la nómina.",
+          "Diseñé y desarrollé el cálculo de emisiones por envío según GLEC v3.2, alineado con ISO 14083 y con cada factor trazable a su fuente publicada.",
+          "Desarrollé la rentabilidad por ruta, que combina combustible, salario y horas extra del conductor."
+        ]
+      },
+      {
+        "role": "Desarrollador Full-Stack",
+        "company": "Gesa Mediación S.L.",
+        "meta": "Murcia · Octubre – noviembre 2025",
+        "bullets": [
+          "Único desarrollador de una app de nutrición con IA: diseñé la arquitectura y construí el núcleo en Laravel (API REST, modelo de datos y lógica de negocio).",
+          "Desarrollé la base de la app en Flutter, con análisis nutricional de fotos y PDF mediante Firebase AI Logic, notificaciones push y sincronización con Firestore."
+        ]
+      },
+      {
+        "role": "Desarrollador Full-Stack en prácticas",
+        "company": "Apuestas de Murcia",
+        "meta": "Murcia · Marzo – junio 2025",
+        "bullets": [
+          "Diseñé y desarrollé ManagePoint para sustituir el sistema anterior: gestión de salones, personal, mobiliario y terminales con Laravel, permisos por roles e informes PDF.",
+          "Diseñé la base de datos y optimicé consultas para las vistas de informes."
+        ]
+      }
+    ],
+    "projects": [
+      {
+        "name": "Truekapp",
+        "url": "https://truekapp.xyz",
+        "label": "truekapp.xyz",
+        "status": "Proyecto propio en producción",
+        "bullets": [
+          "Plataforma de trueque con Laravel: chat en tiempo real con Reverb y WebSockets, y asistente de IA con Google Gemini y búsqueda semántica.",
+          "Iniciado como TFG con dos compañeros; posteriormente lo rehíce y asumí su mantenimiento y despliegue en VPS propio, con tests de Pest e integración continua en GitHub Actions."
+        ]
+      },
+      {
+        "name": "VALO·DEX",
+        "url": "https://valodex-app.vercel.app/",
+        "label": "valodex-app.vercel.app",
+        "status": "Proyecto personal con demo pública",
+        "bullets": [
+          "SPA en React y JavaScript para consultar datos de Valorant. La clave de la API queda en una función serverless y cada pestaña limita sus peticiones por minuto."
+        ]
+      }
+    ],
+    "education": [
+      {
+        "title": "Técnico Superior en Desarrollo de Aplicaciones Web",
+        "detail": "EFA El Campico, Jacarilla · 2023 – 2025"
+      },
+      {
+        "title": "Técnico en Sistemas Microinformáticos y Redes",
+        "detail": "IES Las Espeñetas, Orihuela · 2020 – 2023"
+      }
+    ],
+    "skills": [
+      [
+        "Backend",
+        "Laravel, PHP, MySQL, APIs REST, WebSockets/Reverb, colas, Pest y PHPUnit. Aplicaciones multi-tenant."
+      ],
+      [
+        "Frontend",
+        "JavaScript, TypeScript, Vue.js, HTML, CSS, Tailwind CSS, Blade, Alpine.js y Astro; React en VALO·DEX."
+      ],
+      [
+        "Móvil e IA",
+        "Flutter, Dart, Firebase, Google Gemini (RAG, tool calling, embeddings y visión) y OpenAI API."
+      ],
+      [
+        "Desarrollo con IA",
+        "Claude Code, Codex y Herdr. Coordinación de agentes de distintos modelos en paralelo, delegando tareas acotadas y revisando el código antes de integrarlo."
+      ],
+      [
+        "Herramientas",
+        "Git, GitHub Actions, Linux, VPS, Docker, Nginx, Cloudflare y Vercel."
+      ]
+    ],
+    "languagesLabel": "Idiomas",
+    "languages": "Español nativo · Inglés profesional: uso diario en reuniones y presentaciones técnicas."
+  },
+  "en": {
+    "role": "Full-Stack Developer · Laravel & PHP",
+    "location": "Orihuela, Alicante, Spain · CET/CEST",
+    "headings": {
+      "profile": "Professional profile",
+      "experience": "Professional experience",
+      "projects": "Selected projects",
+      "education": "Education",
+      "skills": "Technical skills"
+    },
+    "profile": "Full-Stack developer specialized in Laravel and PHP, building business applications and SaaS platforms with Laravel backends and APIs, Vue interfaces and Flutter mobile apps.",
+    "experience": [
+      {
+        "role": "Full-Stack Developer",
+        "company": "FleetX",
+        "meta": "Norwegian logistics SaaS · January 2026 – present",
+        "bullets": [
+          "Built the drivers' daily report: a Flutter app that works offline, where drivers log the day's hours, the work done and expenses such as meals or hotel; approval in Vue and a Laravel backend connected to the tachograph and payroll.",
+          "Designed and built the calculation of emissions per shipment following GLEC v3.2, aligned with ISO 14083, with every factor traceable to its published source.",
+          "Built route profitability calculations combining fuel, driver salary and overtime."
+        ]
+      },
+      {
+        "role": "Full-Stack Developer",
+        "company": "Gesa Mediación S.L.",
+        "meta": "Murcia, Spain · October – November 2025",
+        "bullets": [
+          "Sole developer of a nutrition app with AI: designed the architecture and built the Laravel core (REST API, data model and business logic).",
+          "Built the foundation of the Flutter app, with nutritional analysis of photos and PDFs via Firebase AI Logic, push notifications and Firestore sync."
+        ]
+      },
+      {
+        "role": "Full-Stack Developer (internship)",
+        "company": "Apuestas de Murcia",
+        "meta": "Murcia, Spain · March – June 2025",
+        "bullets": [
+          "Designed and built ManagePoint to replace the previous system: management of venues, staff, furniture and terminals with Laravel, permissions by role and PDF reports.",
+          "Designed the database and optimised queries for reporting views."
+        ]
+      }
+    ],
+    "projects": [
+      {
+        "name": "Truekapp",
+        "url": "https://truekapp.xyz",
+        "label": "truekapp.xyz",
+        "status": "Personal project · Live",
+        "bullets": [
+          "Barter platform built with Laravel: real-time chat with Reverb and WebSockets, and an AI assistant with Google Gemini and semantic search.",
+          "Started as a final degree project with two classmates; I later rebuilt it and took over its maintenance and deployment on my own VPS, with Pest tests and continuous integration on GitHub Actions."
+        ]
+      },
+      {
+        "name": "VALO·DEX",
+        "url": "https://valodex-app.vercel.app/",
+        "label": "valodex-app.vercel.app",
+        "status": "Personal project with a public demo",
+        "bullets": [
+          "React and JavaScript SPA for browsing Valorant data. The API key stays in a serverless function and each tab limits its requests per minute."
+        ]
+      }
+    ],
+    "education": [
+      {
+        "title": "Higher Technician in Web Application Development",
+        "detail": "EFA El Campico, Jacarilla, Spain · 2023 – 2025"
+      },
+      {
+        "title": "Technician in IT Systems & Networks",
+        "detail": "IES Las Espeñetas, Orihuela, Spain · 2020 – 2023"
+      }
+    ],
+    "skills": [
+      [
+        "Backend",
+        "Laravel, PHP, MySQL, REST APIs, WebSockets/Reverb, queues, Pest and PHPUnit. Multi-tenant applications."
+      ],
+      [
+        "Frontend",
+        "JavaScript, TypeScript, Vue.js, HTML, CSS, Tailwind CSS, Blade, Alpine.js and Astro; React in VALO·DEX."
+      ],
+      [
+        "Mobile & AI",
+        "Flutter, Dart, Firebase, Google Gemini (RAG, tool calling, embeddings and vision) and OpenAI API."
+      ],
+      [
+        "Development with AI",
+        "Claude Code, Codex and Herdr. Coordinating agents across models in parallel, delegating focused tasks and reviewing the code before integrating it."
+      ],
+      [
+        "Tools",
+        "Git, GitHub Actions, Linux, VPS, Docker, Nginx, Cloudflare and Vercel."
+      ]
+    ],
+    "languagesLabel": "Languages",
+    "languages": "Native Spanish · Professional English: daily use in meetings and technical presentations."
+  }
+}

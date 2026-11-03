@@ -1,0 +1,29 @@
+@page { size: A4; margin: 12mm 14mm; }
+* { box-sizing: border-box; }
+html { background: #e9eeeb; }
+body { margin: 0; color: #171c19; font: 10pt/1.28 Arial, Helvetica, sans-serif; }
+main { background: white; }
+header { padding-bottom: 11px; border-bottom: 2px solid #147556; }
+h1 { margin: 0; font-size: 27pt; line-height: 1.1; letter-spacing: -.7px; }
+.role { margin: 5px 0 7px; color: #14563f; font-size: 12pt; font-weight: 700; }
+.contact, .links { margin: 3px 0 0; font-size: 9pt; }
+a { color: #14563f; text-decoration: none; }
+h2 { margin: 10px 0 5px; padding-bottom: 3px; border-bottom: 0.5pt solid #a6b4ab; color: #171c19; font-size: 9.3pt; line-height: 1.2; letter-spacing: .5px; text-transform: uppercase; }
+p { margin: 0; }
+article { margin-top: 6px; break-inside: avoid; }
+h3 { margin: 0 0 2px; font-size: 10pt; line-height: 1.3; }
+.company { font-weight: 400; }
+.meta { color: #37453c; font-size: 8.7pt; font-weight: 400; }
+ul { margin: 2px 0 0; padding-left: 14px; }
+li { margin-bottom: 2px; padding-left: 1px; }
+.education p { margin-bottom: 3px; }
+.skills p { margin-bottom: 3px; }
+.languages { margin-top: 6px; }
+@media screen {
+  body { padding: 28px 16px; }
+  main { max-width: 210mm; margin: auto; padding: 12mm 14mm; box-shadow: 0 8px 40px #16332418; }
+}
+@media print {
+  html { background: white; }
+  body { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+}
