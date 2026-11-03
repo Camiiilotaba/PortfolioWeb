@@ -1,0 +1,42 @@
+---
+import { type Lang, useDict } from '../i18n';
+import { useSite } from '../i18n/site';
+import Base from '../layouts/Base.astro';
+import Footer from './Footer.astro';
+import Header from './Header.astro';
+import Capabilities from './site/Capabilities.astro';
+import Contact from './site/Contact.astro';
+import Experience from './site/Experience.astro';
+import Hero from './site/Hero.astro';
+import ProjectTruekapp from './site/ProjectTruekapp.astro';
+import ProjectValodex from './site/ProjectValodex.astro';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = useDict(lang);
+const site = useSite(lang);
+---
+
+<Base lang={lang} person>
+  <Header lang={lang} />
+  <main id="main">
+    <Hero lang={lang} />
+
+    <section aria-labelledby="projects-title" id="projects" class="container-x pt-[var(--section-space)]">
+      <div class="mb-10 border-t border-line pt-10 lg:mb-14 lg:pt-14">
+        <h2 id="projects-title" class="statement statement-sm">{site.projects.heading}<span class="period">.</span></h2>
+      </div>
+      <ProjectTruekapp lang={lang} />
+      <div class="mt-20 border-t border-line pt-12 lg:mt-28 lg:pt-16">
+        <ProjectValodex lang={lang} />
+      </div>
+    </section>
+
+    <Capabilities lang={lang} />
+    <Experience lang={lang} />
+    <Contact lang={lang} />
+  </main>
+  <Footer lang={lang} />
+</Base>

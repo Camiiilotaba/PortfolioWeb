@@ -1,0 +1,54 @@
+---
+import { CV_PATHS } from '../data/profile';
+import { HOME_PATH, otherLang, useDict, type Lang } from '../i18n';
+import LogoMark from './LogoMark.astro';
+
+interface Props {
+  lang: Lang;
+  altHref?: string | null;
+}
+const { lang, altHref } = Astro.props;
+const t = useDict(lang);
+const alt = otherLang(lang);
+const switchHref = altHref === undefined ? HOME_PATH[alt] : altHref;
+const home = HOME_PATH[lang];
+
+// Absolute anchors so the nav also works from the case study and legal pages.
+const links = [
+  { href: `${home}#projects`, label: t.nav.projects },
+  { href: `${home}#experience`, label: t.nav.experience },
+  { href: `${home}#contact`, label: t.nav.contact },
+];
+const navLink =
+  'inline-flex min-h-11 items-center px-2 text-[0.9375rem] text-ink-2 transition-colors duration-(--dur-state) ease-(--ease-out) hover:text-ink';
+---
+
+<header class="border-b border-line">
+  <div class="container-x flex flex-wrap items-center justify-between gap-x-6 sm:min-h-16">
+    <a href={home} class="inline-flex min-h-14 min-w-11 items-center text-ink transition-opacity duration-(--dur-state) hover:opacity-80" aria-label={t.nav.home}>
+      <LogoMark />
+    </a>
+
+    <nav aria-label={t.nav.label} class="-mx-2 w-[calc(100%+1rem)] border-t border-line max-sm:order-2 sm:mx-0 sm:ml-auto sm:w-auto sm:border-0">
+      <ul class="flex flex-wrap items-center gap-x-1 sm:gap-x-3">
+        {links.map((l) => (
+          <li>
+            <a href={l.href} class={navLink}>{l.label}</a>
+          </li>
+        ))}
+        <li class="hidden sm:block">
+          <a href={CV_PATHS[lang]} target="_blank" rel="noopener noreferrer" class:list={[navLink, 'min-w-11 justify-center']} type="application/pdf">
+            {t.nav.cv}
+            <span class="sr-only">({t.pdf})</span>
+          <span class="sr-only"> {useDict(lang).newTab}</span></a>
+        </li>
+      </ul>
+    </nav>
+
+    {switchHref && (
+      <a href={switchHref} hreflang={alt} lang={alt} class:list={[navLink, '-mr-2 max-sm:order-1 sm:mr-0']}>
+        {t.nav.langSwitch}
+      </a>
+    )}
+  </div>
+</header>

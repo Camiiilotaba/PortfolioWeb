@@ -1,0 +1,133 @@
+---
+import { CV_PATHS } from '../../data/profile';
+import { useDict, type Lang } from '../../i18n';
+import { useSite } from '../../i18n/site';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const e = useSite(lang).experience;
+const t = useDict(lang);
+---
+
+<section aria-labelledby="experience-title" id="experience" class="container-x pt-[var(--section-space)]">
+  <div class="border-t border-line pt-10 lg:pt-14">
+    <h2 id="experience-title" class="statement statement-sm">{e.heading}<span class="period">.</span></h2>
+  </div>
+
+  <ol class="timeline mt-10 lg:mt-14">
+    {e.items.map((job, i) => (
+      <li class="job grid-12 gap-y-3">
+        <div class="when lg:col-span-3">
+          <span class:list={['marker', i === 0 && 'is-current']} aria-hidden="true"></span>
+          <p class="label text-ink-2">{job.period}</p>
+        </div>
+        <div class="lg:col-span-9">
+          <h3 class="company">{job.company}</h3>
+          <p class="mt-1 text-ink-2">{job.role}</p>
+          <p class="mt-4 max-w-[60ch]">{job.description}</p>
+          <ul class="highlights mt-4">
+            {job.highlights.map((hl) => (
+              <li>
+                {hl.topic && <strong class="font-[560] text-ink">{hl.topic}: </strong>}
+                <span class="text-ink-2">{hl.text}</span>
+              </li>
+            ))}
+          </ul>
+          <p class="label mt-5"><span class="sr-only">{e.techLabel}: </span>{job.tech.join(' / ')}</p>
+        </div>
+      </li>
+    ))}
+  </ol>
+
+  <!-- Same anchor as the previous site, so old links still work. -->
+  <div id="education" class="grid-12 mt-14 gap-y-4 lg:mt-20">
+    <h3 class="label lg:col-span-3">{e.educationHeading}</h3>
+    <ul class="lg:col-span-9">
+      {e.education.map((ed) => (
+        <li class="index-row">
+          <span class="font-[540]">{ed.title}</span>
+          <span class="label">{ed.school} · {ed.period}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  <p class="mt-8 lg:pl-[calc(25%+0.375rem)]">
+    <a href={CV_PATHS[lang]} target="_blank" rel="noopener noreferrer" type="application/pdf" class="link inline-flex min-h-11 items-center">{e.cvNote}&nbsp;<span class="text-muted">({t.pdf})</span><span class="sr-only"> {useDict(lang).newTab}</span></a>
+  </p>
+</section>
+
+<style>
+  .timeline {
+    position: relative;
+  }
+  .job {
+    position: relative;
+    padding-block: 2rem 2.25rem;
+    border-top: 1px solid var(--color-line);
+  }
+  .job:last-child {
+    border-bottom: 1px solid var(--color-line);
+  }
+  .when {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    align-self: start;
+  }
+  .marker {
+    flex: none;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 999px;
+    border: 1px solid var(--color-muted);
+  }
+  .marker.is-current {
+    border-color: transparent;
+    background: var(--color-signal);
+  }
+  .company {
+    font-size: clamp(1.625rem, 1.25rem + 1.4vw, 2.5rem);
+    font-weight: 560;
+    line-height: 1.05;
+    letter-spacing: -0.035em;
+  }
+  .highlights {
+    display: grid;
+    gap: 0.6rem;
+    max-width: 68ch;
+  }
+  .highlights li {
+    position: relative;
+    padding-left: 1.1rem;
+  }
+  .highlights li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.75em;
+    width: 0.45rem;
+    height: 1px;
+    background: var(--color-muted);
+  }
+  @media (min-width: 1024px) {
+    .when {
+      padding-top: 0.6rem;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: calc(0.25rem - 0.5px);
+      width: 1px;
+      background: var(--color-line);
+    }
+    .marker {
+      position: relative;
+      background: var(--color-bg);
+    }
+  }
+</style>

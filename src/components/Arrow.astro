@@ -1,0 +1,26 @@
+---
+// The Latin font subset has no ↗, so arrows are inline SVG (always decorative).
+interface Props {
+  dir: 'ne' | 'e' | 's' | 'w';
+  class?: string;
+}
+const { dir, class: className = '' } = Astro.props;
+---
+
+<svg
+  class:list={['arrow', `arrow-${dir}`, className]}
+  width="14"
+  height="14"
+  viewBox="0 0 14 14"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="square"
+  aria-hidden="true"
+  focusable="false"
+>
+  {dir === 'ne' && <path d="M4 10 10 4M5 4h5v5" />}
+  {dir === 's' && <path d="M7 2v9.5M3 8l4 4 4-4" />}
+  {dir === 'e' && <path d="M2 7h9.5M8 3l4 4-4 4" />}
+  {dir === 'w' && <path d="M12 7H2.5M6 3 2 7l4 4" />}
+</svg>

@@ -1,0 +1,86 @@
+---
+import { Picture } from 'astro:assets';
+import { VALODEX } from '../../data/projects';
+import { useDict, type Lang } from '../../i18n';
+import { useSite } from '../../i18n/site';
+import Arrow from '../Arrow.astro';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const site = useSite(lang).projects;
+const v = site.valodex;
+const L = useDict(lang).projects.labels;
+---
+
+<article aria-labelledby="vd-title" class="secondary grid-12 items-start gap-y-8">
+  <figure class="lg:col-span-5">
+    <div class="frame">
+      <Picture
+        src={VALODEX.image}
+        alt={v.shot.alt}
+        formats={['avif', 'webp']}
+        widths={[400, 640, 960]}
+        sizes="(min-width: 1024px) 38vw, 100vw"
+      />
+    </div>
+    <figcaption class="label mt-3">{v.shot.caption}</figcaption>
+  </figure>
+
+  <div class="lg:col-span-6 lg:col-start-7">
+    <p class="label" aria-hidden="true">P/02 — {site.personalProject}</p>
+    <h3 id="vd-title" class="title">VALO·DEX</h3>
+    <p class="mt-3 max-w-[48ch] text-[1.125rem] leading-relaxed text-ink-2">{v.summary}</p>
+
+    <h4 class="label mt-7">{v.decisionsLabel}</h4>
+    <ol class="mt-2">
+      {v.decisions.map((d, i) => (
+        <li class="index-row justify-start! gap-x-4">
+          <span class="label" aria-hidden="true">0{i + 1}</span>
+          <span class="flex-1 basis-[30ch]">{d}</span>
+        </li>
+      ))}
+    </ol>
+
+    <div class="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3">
+      <a href={VALODEX.url} target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+        {v.demoLabel}<Arrow dir="ne" />
+      <span class="sr-only"> {useDict(lang).newTab}</span></a>
+      <p class="flex items-center gap-2 text-[0.875rem] text-muted">
+        <span class="live-dot" aria-hidden="true"></span>{v.status}
+      </p>
+    </div>
+    <p class="label mt-5"><span class="sr-only">{L.stack}: </span>{VALODEX.stack.join(' / ')}</p>
+  </div>
+</article>
+
+<style>
+  .title {
+    margin-top: 0.4rem;
+    font-size: clamp(2rem, 1.5rem + 2vw, 3.25rem);
+    overflow-wrap: anywhere;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.04em;
+  }
+  .frame {
+    overflow: hidden;
+    border-radius: 10px;
+    border: 1px solid var(--color-line);
+    background: var(--color-surface);
+    padding: 0.5rem;
+    transition: border-color var(--dur-element) var(--ease-out);
+  }
+  .frame :global(img) {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+  @media (hover: hover) {
+    .secondary:hover .frame {
+      border-color: var(--color-line-strong);
+    }
+  }
+</style>

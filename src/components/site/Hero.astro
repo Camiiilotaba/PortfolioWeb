@@ -1,0 +1,198 @@
+---
+import { Picture } from 'astro:assets';
+import portrait from '../../assets/people/camilo-taba.jpg';
+import { CV_PATHS, PERSON } from '../../data/profile';
+import { STACK_EVIDENCE } from '../../data/stack';
+import { useDict, type Lang } from '../../i18n';
+import { useSite } from '../../i18n/site';
+import Arrow from '../Arrow.astro';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = useDict(lang);
+const h = useSite(lang).hero;
+const [lineA, lineB] = h.roleLines;
+---
+
+<!-- Same anchor as the previous site, so old links still work. -->
+<section aria-labelledby="hero-title" id="home" class="hero container-x">
+  <div class="grid-12 gap-y-10 lg:items-end">
+    <div class="lg:col-span-8">
+      <h1 id="hero-title" class="headline">
+        <span class="name block">{PERSON.name}</span>
+        <span class="sr-only">, </span>
+        <span class="capital-row">
+          <span class="capital" aria-hidden="true">
+            <Picture
+              src={portrait}
+              alt=""
+              formats={['avif', 'webp']}
+              widths={[120, 240, 360]}
+              sizes="(min-width: 1024px) 8rem, 4rem"
+              loading="eager"
+              fetchpriority="high"
+            />
+          </span>
+          <span class="role">
+            <span class="block">{lineA}</span>{' '}
+            <span class="block">{lineB}<span class="period">.</span></span>
+          </span>
+        </span>
+      </h1>
+
+      <p class="mobile-stack lg:hidden">
+        <span class="sr-only">{h.stackLabel}: </span>
+        {STACK_EVIDENCE.flatMap((r) => r.tech.split(' / ')).map((tech, i) => (
+          <>
+            {i > 0 && (
+              <>
+                <span class:list={['sep', i === 3 && 'sep-break']} aria-hidden="true">/</span>
+                <span class="sr-only">, </span>
+                {i === 3 ? <br class="br-small" /> : <wbr />}
+              </>
+            )}
+            <span>{tech}</span>
+          </>
+        ))}
+      </p>
+
+      <p class="text-lead mt-5 max-w-[44ch] text-ink-2 lg:mt-7">{h.lead}</p>
+
+      <div class="mt-8 flex flex-wrap items-center gap-3">
+        <a href="#projects" class="btn btn-primary grow max-[359px]:px-4 sm:grow-0">{t.hero.ctaProjects}<Arrow dir="s" /></a>
+        <a href="#contact" class="btn btn-secondary grow max-[359px]:px-4 sm:grow-0">{t.hero.ctaContact}</a>
+        <span class="flex flex-wrap gap-x-5 sm:ml-3">
+          <a href={CV_PATHS[lang]} target="_blank" rel="noopener noreferrer" type="application/pdf" class="link inline-flex min-h-11 items-center text-[0.9375rem]">CV&nbsp;<span class="text-muted">(PDF)</span><span class="sr-only"> {useDict(lang).newTab}</span></a>
+          <a href={PERSON.github} target="_blank" rel="noopener noreferrer" class="link inline-flex min-h-11 items-center gap-1.5 text-[0.9375rem]">GitHub<Arrow dir="ne" /><span class="sr-only"> {useDict(lang).newTab}</span></a>
+          <a href={PERSON.linkedin} target="_blank" rel="noopener noreferrer" class="link inline-flex min-h-11 items-center gap-1.5 text-[0.9375rem]">LinkedIn<Arrow dir="ne" /><span class="sr-only"> {useDict(lang).newTab}</span></a>
+        </span>
+      </div>
+    </div>
+
+    <section aria-labelledby="stack-index-title" class="hidden lg:col-span-4 lg:block">
+      <h2 id="stack-index-title" class="sr-only">{h.stackLabel}</h2>
+      <ul>
+        {STACK_EVIDENCE.map((row) => (
+          <li class="index-row stack-row">
+            <span class="tech">{row.tech}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+  </div>
+</section>
+
+<style>
+  .hero {
+    padding-top: clamp(2rem, 1rem + 4vw, 4.5rem);
+  }
+  /* Sized so «portrait + longest role line» fits the 8-column measure from 320 px up (≈ 7.3em wide). */
+  .headline {
+    font-size: clamp(2.35rem, 0.9rem + 6.6vw, 6rem);
+    overflow-wrap: anywhere;
+    hyphens: auto;
+    font-weight: 600;
+    line-height: 0.92;
+    letter-spacing: -0.05em;
+  }
+  .name {
+    font-size: 0.66em;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    margin-bottom: 0.08em;
+  }
+  .capital-row {
+    display: flex;
+    align-items: stretch;
+    gap: 0.14em;
+    margin-top: 0.06em;
+  }
+  .role {
+    min-width: 0; /* lets the role lines break inside the capital row when text is enlarged */
+    color: var(--color-ink-2);
+  }
+  .period {
+    color: var(--color-muted);
+  }
+  .capital {
+    flex: none;
+    width: 1.32em;
+    height: 1.76em;
+    margin-top: 0.06em;
+    overflow: hidden;
+    border-radius: 0.12em;
+    border: 1px solid var(--color-line-strong);
+    background: var(--color-surface);
+  }
+  .capital :global(img) {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 30%;
+    filter: grayscale(0.15) contrast(1.03);
+  }
+  /* Six technologies on one line from 360 px: the size follows the available width (content ≈ 23.8em). */
+  .mobile-stack {
+    margin-top: 1rem;
+    font-size: clamp(0.8125rem, calc((100vw - 2 * var(--gutter)) / 23.8), 1rem);
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+    color: var(--color-ink);
+  }
+  .mobile-stack > span:not(.sep):not(.sr-only) {
+    white-space: nowrap;
+  }
+  .mobile-stack .sep {
+    margin-inline: 0.3em;
+    color: var(--color-muted);
+  }
+  .br-small {
+    display: none;
+  }
+  /* Below 360 px: two exact lines, «Laravel / PHP / MySQL» and «JavaScript / Vue / Flutter» (no dangling slash). */
+  @media (max-width: 359.98px) {
+    .mobile-stack {
+      font-size: 0.9375rem;
+    }
+    .sep-break {
+      display: none;
+    }
+    .br-small {
+      display: inline;
+    }
+  }
+  .stack-row {
+    padding-block: 0.7rem;
+  }
+  .tech {
+    font-size: clamp(1.375rem, 1.1rem + 0.6vw, 1.875rem);
+    font-weight: 540;
+    letter-spacing: -0.025em;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .capital {
+      animation: reveal 900ms 150ms var(--ease-out) both;
+    }
+    .capital :global(img) {
+      animation: settle 1200ms 150ms var(--ease-out) both;
+    }
+  }
+  @keyframes reveal {
+    from {
+      clip-path: inset(100% 0 0 0 round 0.12em);
+    }
+    to {
+      clip-path: inset(0 0 0 0 round 0.12em);
+    }
+  }
+  @keyframes settle {
+    from {
+      transform: scale(1.12);
+    }
+  }
+</style>

@@ -1,0 +1,91 @@
+---
+import '../styles/global.css';
+import sansFont from '../assets/fonts/instrument-sans-latin-wght.woff2?url';
+import { HOME_PATH, useDict, type Lang } from '../i18n';
+import { PERSON } from '../data/profile';
+
+interface Props {
+  lang: Lang;
+  title?: string;
+  description?: string;
+  path?: string;
+  alternates?: Partial<Record<Lang, string>> | null;
+  ogType?: 'website' | 'article';
+  person?: boolean;
+  noindex?: boolean;
+}
+
+const { lang, title, description, path, alternates, ogType = 'website', person = false, noindex = false } = Astro.props;
+const t = useDict(lang);
+const site = Astro.site ?? new URL(PERSON.site);
+const pagePath = path ?? HOME_PATH[lang];
+const canonical = new URL(pagePath, site).href;
+const alt = alternates === undefined ? HOME_PATH : alternates;
+const pageTitle = title ?? t.meta.title;
+const pageDescription = description ?? t.meta.description;
+const indexable = import.meta.env.PUBLIC_INDEXABLE === 'true' && !noindex;
+const ogImage = new URL(lang === 'es' ? '/og-image-es.png' : '/og-image.png', site).href;
+
+// Only verifiable facts: no ratings, years of experience or availability.
+const websiteLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: `${PERSON.name} · Portfolio`,
+  url: new URL('/', site).href,
+  inLanguage: ['es', 'en'],
+  author: { '@type': 'Person', name: PERSON.name },
+};
+
+const personLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: PERSON.name,
+  url: new URL(HOME_PATH[lang], site).href,
+  email: `mailto:${PERSON.email}`,
+  jobTitle: lang === 'es' ? 'Desarrollador Full-Stack' : 'Full-Stack Developer',
+  worksFor: { '@type': 'Organization', name: 'FleetX' },
+  address: { '@type': 'PostalAddress', addressLocality: 'Orihuela', addressRegion: 'Alicante', addressCountry: 'ES' },
+  knowsLanguage: ['es', 'en'],
+  knowsAbout: ['Laravel', 'PHP', 'JavaScript', 'MySQL', 'Vue.js', 'Flutter', 'REST APIs'],
+  sameAs: [PERSON.github, PERSON.linkedin],
+};
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+    <!-- Indexing is opt-in: PUBLIC_INDEXABLE=true on the production deploy only. -->
+    <meta name="robots" content={indexable ? 'index, follow, max-image-preview:large' : 'noindex, nofollow'} />
+    <link rel="canonical" href={canonical} />
+    {alt && Object.entries(alt).map(([l, p]) => <link rel="alternate" hreflang={l} href={new URL(p!, site).href} />)}
+    {alt?.en && <link rel="alternate" hreflang="x-default" href={new URL(alt.en, site).href} />}
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta name="theme-color" content="#0b0b0d" />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content={lang === 'es' ? 'es_ES' : 'en_GB'} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preload" href={sansFont} as="font" type="font/woff2" crossorigin />
+    {person && <script type="application/ld+json" set:html={JSON.stringify([personLd, websiteLd])} />}
+  </head>
+  <body class="min-h-dvh bg-bg text-ink">
+    <a
+      href="#main"
+      class="btn btn-primary fixed top-3 left-3 z-50 -translate-y-[200%] opacity-0 focus-visible:translate-y-0 focus-visible:opacity-100"
+    >
+      {t.skip}
+    </a>
+    <slot />
+  </body>
+</html>

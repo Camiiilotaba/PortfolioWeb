@@ -1,0 +1,27 @@
+---
+// Bilingual 404 (static hosts serve a single 404 page). Spanish first, English below.
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { useSite } from '../i18n/site';
+import Base from '../layouts/Base.astro';
+
+const es = useSite('es').notFound;
+const en = useSite('en').notFound;
+---
+
+<Base lang="es" title={`404 · ${es.title} · Camilo Taba`} description={es.body} path="/404/" alternates={null} noindex>
+  <Header lang="es" />
+  <main id="main" class="container-x py-20 lg:py-32">
+    <p class="label">404</p>
+    <h1 class="statement mt-4">{es.title}<span class="period">.</span></h1>
+    <p class="text-lead mt-6 text-ink-2">{es.body}</p>
+    <a href="/es/" class="btn btn-primary mt-8">{es.home}</a>
+
+    <div lang="en" class="mt-16 border-t border-line pt-8">
+      <h2 class="text-[1.5rem] font-[560] tracking-[-0.02em]">{en.title}.</h2>
+      <p class="mt-3 text-ink-2">{en.body}</p>
+      <a href="/" class="link mt-4 inline-flex min-h-11 items-center">{en.home}</a>
+    </div>
+  </main>
+  <Footer lang="es" />
+</Base>

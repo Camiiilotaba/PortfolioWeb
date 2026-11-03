@@ -1,0 +1,23 @@
+---
+import { PERSON } from '../data/profile';
+import { useDict, type Lang } from '../i18n';
+import { useSite } from '../i18n/site';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const c = useDict(lang).contact;
+const f = useSite(lang).footer;
+---
+
+<footer class="border-t border-line">
+  <div class="container-x flex flex-col gap-2 py-6 sm:flex-row sm:items-center sm:justify-between">
+    <p class="label">© 2026 {PERSON.name} · {c.location}</p>
+    <ul class="flex flex-wrap gap-x-5">
+      <li><a href="/es/aviso-legal/" hreflang="es" class="label inline-flex min-h-11 items-center hover:text-ink">{f.legal}</a></li>
+      <li><a href="/es/privacidad/" hreflang="es" class="label inline-flex min-h-11 items-center hover:text-ink">{f.privacy}</a></li>
+      <li><a href="#main" class="label inline-flex min-h-11 items-center hover:text-ink">{f.top}</a></li>
+    </ul>
+  </div>
+</footer>
