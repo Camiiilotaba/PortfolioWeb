@@ -1,0 +1,66 @@
+---
+// If analytics is ever enabled, update «Visitas al sitio», «Quién más accede» and the CSP connect-src.
+import LegalPage from '../../components/site/LegalPage.astro';
+import { PERSON } from '../../data/profile';
+---
+
+<LegalPage
+  title="Política de privacidad"
+  description="Cómo se tratan los datos personales en camilotaba.dev."
+  path="/es/privacidad/"
+  updated="2 de noviembre de 2026"
+>
+  <h2>Responsable del tratamiento</h2>
+  <ul>
+    <li><strong>Responsable:</strong> Julián Camilo Blandón Taba</li>
+    <li><strong>Residencia:</strong> Orihuela (Alicante), España</li>
+    <li><strong>Contacto para temas de privacidad:</strong> <a href={`mailto:${PERSON.email}`}>{PERSON.email}</a></li>
+  </ul>
+  <p>No es obligatorio designar un delegado de protección de datos para esta actividad, así que no hay uno.</p>
+
+  <h2>Qué datos se tratan y para qué</h2>
+  <p>
+    <strong>Correos que me envías.</strong> Este sitio no tiene formulario. Si me escribes por correo electrónico, trato tu
+    dirección y el contenido del mensaje solo para responderte y, si me pides un proyecto, para preparar un presupuesto.
+  </p>
+  <p>
+    <strong>Visitas al sitio.</strong> Al cargar la web, el servidor del proveedor de alojamiento recibe datos técnicos
+    como tu dirección IP y tu navegador, necesarios para mostrarte la página. No uso herramientas de analítica ni de
+    medición de visitas.
+  </p>
+
+  <h2>Base legal</h2>
+  <ul>
+    <li><strong>Peticiones de presupuesto o de servicios:</strong> la aplicación, a petición tuya, de medidas precontractuales (artículo 6.1.b del Reglamento General de Protección de Datos, RGPD).</li>
+    <li><strong>Otros mensajes:</strong> el interés legítimo en responder a quien se pone en contacto conmigo (artículo 6.1.f del RGPD).</li>
+    <li><strong>Funcionamiento de la web:</strong> el interés legítimo en ofrecer un sitio que funcione.</li>
+  </ul>
+
+  <h2>Quién más accede a los datos</h2>
+  <p>
+    No vendo ni cedo tus datos a nadie. El sitio se aloja en <strong>Vercel Inc.</strong> (Estados Unidos), que trata los
+    datos técnicos de las visitas por mi cuenta como encargado del tratamiento. Las transferencias internacionales que
+    ello implica están amparadas por las cláusulas contractuales tipo aprobadas por la Comisión Europea, incluidas en su
+    acuerdo de tratamiento de datos (<a href="https://vercel.com/legal/privacy-policy">política de privacidad de Vercel</a>).
+  </p>
+
+  <h2>Cuánto tiempo se conservan</h2>
+  <p>
+    Los correos, el tiempo necesario para atender tu consulta y, como máximo, 12 meses si no da lugar a un encargo. Si
+    trabajamos juntos, los conservaré durante los plazos que exija la ley.
+  </p>
+
+  <h2>Tus derechos</h2>
+  <p>
+    Puedes pedirme el acceso, la rectificación o la supresión de tus datos, la limitación de su tratamiento, oponerte a él
+    o solicitar su portabilidad. Escríbeme a <a href={`mailto:${PERSON.email}`}>{PERSON.email}</a> indicando qué derecho quieres ejercer.
+  </p>
+  <p>
+    Si crees que no he tratado tus datos correctamente, puedes presentar una reclamación ante la Agencia Española de
+    Protección de Datos (<a href="https://www.aepd.es" target="_blank" rel="noopener noreferrer">www.aepd.es<span class="sr-only"> (se abre en una pestaña nueva)</span></a>).
+  </p>
+  <p>No tomo decisiones automatizadas ni elaboro perfiles con tus datos.</p>
+
+  <h2>Cookies</h2>
+  <p>Este sitio no instala cookies propias ni de terceros. Si en el futuro se añadiera algún servicio que las use, se te pedirá permiso antes.</p>
+</LegalPage>

@@ -1,0 +1,181 @@
+---
+import { Picture } from 'astro:assets';
+import { TRUEKAPP } from '../../data/projects';
+import { HOME_PATH, otherLang, useDict, type Lang } from '../../i18n';
+import { useSite } from '../../i18n/site';
+import Base from '../../layouts/Base.astro';
+import Arrow from '../Arrow.astro';
+import Footer from '../Footer.astro';
+import Header from '../Header.astro';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = useDict(lang);
+const site = useSite(lang);
+const cs = site.caseStudy;
+const shots = site.projects.truekapp.shots;
+const img = TRUEKAPP.images[lang];
+const p = t.projects.truekapp;
+const L = t.projects.labels;
+const other = otherLang(lang);
+const [reverb, fallback, search] = p.decisions;
+
+const chapters = [
+  { n: '01', decision: reverb!, image: img.chat, shot: shots.chat, tall: false },
+  { n: '02', decision: fallback!, image: img.assistant, shot: shots.assistant, tall: false },
+  { n: '03', decision: search!, image: img.catalog, shot: shots.catalog, tall: true },
+];
+---
+
+<Base
+  lang={lang}
+  title={cs.title}
+  description={cs.description}
+  path={TRUEKAPP.casePath[lang]}
+  alternates={TRUEKAPP.casePath}
+  ogType="article"
+>
+  <Header lang={lang} altHref={TRUEKAPP.casePath[other]} />
+  <main id="main" class="container-x">
+    <a href={`${HOME_PATH[lang]}#projects`} class="link mt-8 inline-flex min-h-11 items-center gap-2 text-[0.9375rem]">
+      <Arrow dir="w" />{cs.back}
+    </a>
+
+    <header class="grid-12 mt-6 gap-y-8 lg:mt-10 lg:items-end">
+      <div class="lg:col-span-7">
+        <p class="label">{cs.status}</p>
+        <h1 class="wordmark mt-3">Truekapp<span class="period">.</span></h1>
+        <p class="text-lead mt-6 max-w-[48ch] text-ink-2">{cs.intro}</p>
+      </div>
+      <div class="flex flex-col gap-3 lg:col-span-4 lg:col-start-9">
+        <a href={TRUEKAPP.url} target="_blank" rel="noopener noreferrer" class="btn btn-primary justify-between">
+          <span>{p.demoLabel}</span>
+          <span class="inline-flex items-center gap-2 font-mono text-[0.875rem] font-normal opacity-70 sm:text-[0.8125rem]">{TRUEKAPP.label}<Arrow dir="ne" /></span>
+        <span class="sr-only"> {useDict(lang).newTab}</span></a>
+        <p class="flex items-start gap-2.5 text-[0.9375rem] leading-snug text-ink-2">
+          <span class="live-dot mt-[0.45em]" aria-hidden="true"></span>{p.status}
+        </p>
+        <p class="label">{p.codeNote}</p>
+      </div>
+    </header>
+
+    <figure class="mt-12 max-w-[55rem] lg:mt-16">
+      <div class="frame frame-hero">
+        <Picture src={img.trades} alt={shots.trades.alt} formats={['avif', 'webp']} widths={[480, 760, 1265]} sizes="(min-width: 960px) 880px, 100vw" loading="eager" fetchpriority="high" />
+      </div>
+      <figcaption class="label mt-3">{shots.trades.caption}</figcaption>
+    </figure>
+
+    <section aria-labelledby="role-title" class="grid-12 mt-16 gap-y-6 border-t border-line pt-10 lg:mt-24 lg:pt-14">
+      <h2 id="role-title" class="statement statement-sm lg:col-span-4">{cs.roleHeading}<span class="period">.</span></h2>
+      <p class="text-[1.1875rem] leading-relaxed lg:col-span-7 lg:col-start-6">{p.contribution}</p>
+    </section>
+
+    <section aria-labelledby="decisions-title" class="mt-16 border-t border-line pt-10 lg:mt-24 lg:pt-14">
+      <h2 id="decisions-title" class="statement statement-sm">{cs.decisionsHeading}<span class="period">.</span></h2>
+      <ol class="chapters mt-10 lg:mt-14">
+        {chapters.map((c, i) => (
+          <li class:list={['chapter grid-12 items-center gap-y-5', i % 2 === 1 && 'flip']}>
+            <figure class="lg:col-span-6">
+              <div class:list={['frame', c.tall && 'frame-tall']}>
+                <Picture src={c.image} alt={c.shot.alt} formats={['avif', 'webp']} widths={[400, 640, 960]} sizes="(min-width: 1024px) 48vw, 100vw" />
+              </div>
+              <figcaption class="label mt-3">{c.shot.caption}</figcaption>
+            </figure>
+            <div class="copy lg:col-span-5">
+              <p class="num" aria-hidden="true">{c.n}</p>
+              <h3 class="mt-4 text-[1.5rem] font-[560] leading-tight tracking-[-0.025em]">{c.decision.title}</h3>
+              <p class="mt-3 text-ink-2">{c.decision.body}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </section>
+
+    <div class="mt-14 mb-16 flex flex-col gap-3 border-t border-line pt-5 sm:flex-row sm:items-center sm:justify-between">
+      <p class="label"><span class="sr-only">{L.stack}: </span>{TRUEKAPP.stack.join(' / ')}</p>
+      <div class="flex gap-6">
+        <a href={`${HOME_PATH[lang]}#projects`} class="link inline-flex min-h-11 items-center text-[0.9375rem]">{cs.back}</a>
+        <a href={TRUEKAPP.casePath[other]} hreflang={other} lang={other} class="link inline-flex min-h-11 items-center text-[0.9375rem]">{cs.otherLang}</a>
+      </div>
+    </div>
+  </main>
+  <Footer lang={lang} />
+</Base>
+
+<style>
+  .wordmark {
+    font-size: clamp(3.25rem, 1rem + 8vw, 8rem);
+    overflow-wrap: anywhere;
+    font-weight: 600;
+    line-height: 0.88;
+    letter-spacing: -0.06em;
+  }
+  .period {
+    color: var(--color-muted);
+  }
+  .num {
+    font-size: clamp(2.25rem, 1.8rem + 1.6vw, 3.25rem);
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: -0.05em;
+    color: var(--color-muted);
+  }
+  .frame {
+    overflow: hidden;
+    border-radius: 10px;
+    border: 1px solid var(--color-line);
+    background: var(--color-surface);
+    padding: 0.5rem;
+  }
+  .frame :global(picture),
+  .frame :global(img) {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+  /* The catalog capture is very tall: show its top (filters + first rows of real items). */
+  .frame-tall :global(picture) {
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+  }
+  .frame-tall :global(img) {
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+  .chapters {
+    display: grid;
+    gap: clamp(3rem, 2rem + 3vw, 5.5rem);
+  }
+  @media (min-width: 1024px) {
+    .chapter .copy {
+      grid-column: 8 / span 5;
+    }
+    .chapter.flip figure {
+      grid-column: 7 / span 6;
+      grid-row: 1;
+    }
+    .chapter.flip .copy {
+      grid-column: 1 / span 5;
+      grid-row: 1;
+    }
+  }
+  @supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+      .chapter figure {
+        animation: lift linear both;
+        animation-timeline: view();
+        animation-range: entry 0% entry 80%;
+      }
+    }
+  }
+  @keyframes lift {
+    from {
+      transform: translateY(32px);
+    }
+  }
+</style>

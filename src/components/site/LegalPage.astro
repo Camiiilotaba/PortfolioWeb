@@ -1,0 +1,71 @@
+---
+import Base from '../../layouts/Base.astro';
+import Arrow from '../Arrow.astro';
+import Footer from '../Footer.astro';
+import Header from '../Header.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  path: string;
+  updated: string;
+}
+const { title, description, path, updated } = Astro.props;
+---
+
+<Base lang="es" title={`${title} · Camilo Taba`} description={description} path={path} alternates={null}>
+  <Header lang="es" altHref={null} />
+  <main id="main" class="container-x">
+    <a href="/es/" class="link mt-8 inline-flex min-h-11 items-center gap-2 text-[0.9375rem]"><Arrow dir="w" />Volver a la portada</a>
+    <div class="grid-12 mt-6 mb-20 gap-y-8">
+      <header class="lg:col-span-4">
+        <h1 class="statement statement-sm">{title}<span class="period">.</span></h1>
+        <p class="label mt-4">Última actualización: {updated}</p>
+      </header>
+      <div class="legal lg:col-span-7 lg:col-start-6">
+        <slot />
+      </div>
+    </div>
+  </main>
+  <Footer lang="es" />
+</Base>
+
+<style>
+  .legal {
+    max-width: 68ch;
+    overflow-wrap: anywhere; /* long e-mail addresses break instead of widening the list (text zoom) */
+  }
+  .legal :global(h2) {
+    margin-top: 2.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--color-line);
+    font-size: 1.375rem;
+    font-weight: 560;
+    letter-spacing: -0.02em;
+  }
+  .legal :global(h2:first-child) {
+    margin-top: 0;
+  }
+  .legal :global(p),
+  .legal :global(li) {
+    color: var(--color-ink-2);
+  }
+  .legal :global(p) {
+    margin-top: 1rem;
+  }
+  .legal :global(ul) {
+    margin-top: 1rem;
+    display: grid;
+    gap: 0.5rem;
+  }
+  .legal :global(strong) {
+    color: var(--color-ink);
+    font-weight: 560;
+  }
+  .legal :global(a) {
+    color: var(--color-ink);
+    text-decoration: underline;
+    text-decoration-color: var(--color-line-strong);
+    text-underline-offset: 0.3em;
+  }
+</style>
