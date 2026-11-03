@@ -1,5 +1,7 @@
 # camilotaba.dev
 
+[![Home page of camilotaba.dev](.github/preview.webp)](https://camilotaba.dev)
+
 Source of my personal portfolio: a static, bilingual (EN/ES) site built with **Astro** and **Tailwind CSS 4**.
 
 - `/` English · `/es/` Spanish
