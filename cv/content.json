@@ -52,7 +52,7 @@
         "company": "Apuestas de Murcia",
         "meta": "Murcia · Marzo – junio 2025",
         "bullets": [
-          "Diseñé y desarrollé ManagePoint para sustituir el sistema anterior: gestión de salones, personal, mobiliario y terminales con Laravel, permisos por roles e informes PDF.",
+          "Diseñé y desarrollé la aplicación de gestión de salones que sustituyó al sistema anterior: operadora, responsables, mobiliario, máquinas y terminales por salón con Laravel, permisos por roles, fotos de cada visita subidas desde el móvil (PWA) e histórico de cambios.",
           "Diseñé la base de datos y optimicé consultas para las vistas de informes."
         ]
       }
@@ -149,7 +149,7 @@
         "company": "Apuestas de Murcia",
         "meta": "Murcia, Spain · March – June 2025",
         "bullets": [
-          "Designed and built ManagePoint to replace the previous system: management of venues, staff, furniture and terminals with Laravel, permissions by role and PDF reports.",
+          "Designed and built the venue-management app that replaced the previous system: operator, managers, furniture, machines and terminals per venue with Laravel, permissions by role, photos of each visit uploaded from a phone (PWA) and a change history.",
           "Designed the database and optimised queries for reporting views."
         ]
       }

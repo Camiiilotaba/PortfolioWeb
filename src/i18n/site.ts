@@ -142,8 +142,8 @@ const es: SiteDict = {
         period: 'Marzo – junio 2025',
         description: 'Aplicación de gestión para una empresa de salones de juego.',
         highlights: [
-          { text: 'Diseñé y desarrollé ManagePoint, que sustituyó al sistema antiguo: salones, personal, mobiliario y terminales en un solo sitio.' },
-          { text: 'Añadí partes de trabajo por salón e informes en PDF, con un histórico de cambios que solo un administrador puede corregir.' },
+          { text: 'Diseñé y desarrollé la aplicación de gestión de salones que sustituyó al sistema anterior: operadora, responsables, mobiliario, máquinas y terminales de cada salón en un solo sitio.' },
+          { text: 'Desde el móvil, como PWA, el equipo sube las fotos de cada visita a modo de parte diario, con un histórico de cambios que solo un administrador puede corregir.' },
         ],
         tech: ['Laravel', 'PHP', 'MySQL', 'JavaScript', 'Tailwind CSS'],
       },
@@ -251,8 +251,8 @@ const en: SiteDict = {
         period: 'March – June 2025',
         description: 'Management application for a company that runs gaming venues.',
         highlights: [
-          { text: 'Designed and built ManagePoint, which replaced the old system: venues, staff, furniture and terminals in one place.' },
-          { text: 'Added work reports for each venue and PDF reports, with a change history that only an administrator can correct.' },
+          { text: 'Designed and built the venue-management app that replaced the old system: each venue\'s operator, managers, furniture, machines and terminals in one place.' },
+          { text: 'From a phone, as a PWA, the team uploads the photos of each visit as a daily report, with a change history that only an administrator can correct.' },
         ],
         tech: ['Laravel', 'PHP', 'MySQL', 'JavaScript', 'Tailwind CSS'],
       },
