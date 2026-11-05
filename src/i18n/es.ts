@@ -44,7 +44,7 @@ export const es: Dict = {
         },
         {
           title: 'Búsqueda semántica sin base de datos vectorial',
-          body: 'Los embeddings se guardan en MySQL y la similitud se calcula en PHP. Con este volumen basta y me ahorro otro servicio.',
+          body: 'Los embeddings se guardan en MySQL y la similitud coseno se calcula en PHP. El límite ronda los 900 objetos, muy por encima de lo que tiene la demo, así que otro servicio solo añadiría coste.',
         },
       ],
       status: 'Demo sin necesidad de registro, los datos se reinician diariamente.',

@@ -44,7 +44,7 @@ export const en: Dict = {
         },
         {
           title: 'Semantic search without a vector database',
-          body: 'Embeddings are stored in MySQL and similarity is computed in PHP. At this volume that is enough, and it saves running another service.',
+          body: 'Embeddings are stored in MySQL and cosine similarity runs in PHP. The ceiling is around 900 items, far above what the demo holds, so another service would only add cost.',
         },
       ],
       status: 'No account needed; the demo data resets daily.',
