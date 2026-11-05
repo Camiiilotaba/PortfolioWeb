@@ -40,6 +40,10 @@ for (const v of variants) {
   await page.evaluate(() => document.fonts.ready);
   await page.screenshot({ path: resolve(v.file) });
   console.log('✓', v.file);
+  // JPEG copy for og:image: the previous site shipped a JPEG and link previewers accepted it everywhere.
+  const jpg = v.file.replace(/\.png$/, '.jpg');
+  await page.screenshot({ path: resolve(jpg), type: 'jpeg', quality: 92 });
+  console.log('✓', jpg);
 }
 const icon = readFileSync(resolve('public/favicon.svg'), 'utf8');
 await page.setViewport({ width: 180, height: 180, deviceScaleFactor: 1 });
